@@ -1,0 +1,77 @@
+services:
+
+  minio-a:
+    image: quay.io/minio/minio
+    container_name: minio-mahasiswa-a
+    ports:
+      - "9100:9000"
+      - "9101:9001"
+    volumes:
+      - ./data/minio-a:/data
+    environment:
+      MINIO_ROOT_USER: mahasiswa-a
+      MINIO_ROOT_PASSWORD: PasswordA123!
+    command: server /data --console-address ":9001"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  minio-b:
+    image: quay.io/minio/minio
+    container_name: minio-mahasiswa-b
+    ports:
+      - "9200:9000"
+      - "9201:9001"
+    volumes:
+      - ./data/minio-b:/data
+    environment:
+      MINIO_ROOT_USER: mahasiswa-b
+      MINIO_ROOT_PASSWORD: PasswordB123!
+    command: server /data --console-address ":9001"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  minio-c:
+    image: quay.io/minio/minio
+    container_name: minio-mahasiswa-c
+    ports:
+      - "9300:9000"
+      - "9301:9001"
+    volumes:
+      - ./data/minio-c:/data
+    environment:
+      MINIO_ROOT_USER: mahasiswa-c
+      MINIO_ROOT_PASSWORD: PasswordC123!
+    command: server /data --console-address ":9001"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  minio-d:
+    image: quay.io/minio/minio
+    container_name: minio-mahasiswa-d
+    ports:
+      - "9400:9000"
+      - "9401:9001"
+    volumes:
+      - ./data/minio-d:/data
+    environment:
+      MINIO_ROOT_USER: mahasiswa-d
+      MINIO_ROOT_PASSWORD: PasswordD123!
+    command: server /data --console-address ":9001"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
