@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  min-height: 100vh;
+  background: linear-gradient(#87ceeb, #dfffd8);
+  color: #1f2937;
+  padding-top: 25px;
+}
+
+h1 {
+  font-size: 42px;
+  color: #2f7d32;
+  text-shadow: 2px 2px white;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.info span {
+  background: rgba(255,255,255,0.8);
+  padding: 12px 55px;
+  border-radius: 20px;
+  font-size: 20px;
+  color: #256029;
+}
+
+#gameArea {
+  width: 650px;
+  height: 500px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  border: 5px solid #2f7d32;
+  border-radius: 15px;
+  background:
+    linear-gradient(rgba(255,255,255,0.55), rgba(255,255,255,0.55)),
+    linear-gradient(#b7e4ff 0%, #eaffd0 70%, #5fbf4a 100%);
+}
+
+#gameArea::before {
+  content: "🌳 🌼 🌷 🌿 🌳 🌻 🌱";
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  font-size: 38px;
+  opacity: 0.9;
+}
+
+#fruit {
+  position: absolute;
+  top: 0;
+  left: 300px;
+  font-size: 48px;
+}
+
+#basket {
+  position: absolute;
+  bottom: 10px;
+  left: 270px;
+  font-size: 70px;
+}
+
+.controls {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+button {
+  padding: 13px 35px;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#startBtn {
+  background: #22c55e;
+}
+
+#pauseBtn {
+  background: #f59e0b;
+}
+
+#restartBtn {
+  background: #ef4444;
+}
